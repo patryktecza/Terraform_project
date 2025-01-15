@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Patryk's Portfolio</title>
+
+    <!-- Include Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light background color */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #34495e; /* Darker background for header */
+            color: white;
+            padding: 30px 0;
+        }
+
+        header .title {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        header nav ul {
+            list-style: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 25px;
+        }
+
+        header nav ul li a {
+            color: #ecf0f1; /* Light text color */
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #1abc9c; /* Change to a teal color on hover */
+        }
+
+        section {
+            padding: 60px 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #2c3e50; /* Darker color for headings */
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 20px;
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .about .profile-img {
+            display: block;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #1abc9c; /* Border around the profile image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a shadow to the image */
+            transition: transform 0.3s ease;
+        }
+
+        .about .profile-img:hover {
+            transform: scale(1.1); /* Zoom effect when hovered */
+        }
+
+        .projects .project-cards {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .project-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .reviews .review-cards {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .review-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            text-align: center;
+            font-style: italic;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .contact input, .contact textarea {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .contact button {
+            padding: 15px;
+            background-color: #1abc9c; /* Greenish button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: #16a085; /* Darker green on hover */
+        }
+
+        footer {
+            background-color: #34495e; /* Footer background color */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .project-cards, .review-cards {
+                flex-direction: column;
+            }
+
+            .project-card, .review-card {
+                width: 100%;
+            }
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="title animate__animated animate__fadeIn">Patryk's Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I'm Patryk, a passionate web developer with a keen eye for design and functionality. I specialize in creating modern and responsive websites using the latest technologies.</p>
+            
+            <!-- Profile Picture -->
+            <img src="profile.png" alt="Patryk's Profile Picture" class="profile-img animate__animated animate__zoomIn">
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-cards">
+                <div class="project-card animate__animated animate__fadeInLeft">
+                    <img src="project1.jpg" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>This is a description of the first project I worked on, showcasing skills in HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="project-card animate__animated animate__fadeInLeft">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>This is a description of the second project, focusing on responsive design and optimization.</p>
+                </div>
+                <div class="project-card animate__animated animate__fadeInLeft">
+                    <img src="project3.jpg" alt="Project 3">
+                    <h3>Project 3</h3>
+                    <p>This project demonstrates my work with backend technologies and database integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>What Others Say</h2>
+            <div class="review-cards">
+                <div class="review-card animate__animated animate__fadeInRight">
+                    <p>"Patryk's work was exceptional. He delivered our project on time and exceeded our expectations!"</p>
+                    <p>- Client 1</p>
+                </div>
+                <div class="review-card animate__animated animate__fadeInRight">
+                    <p>"A true professional. I would highly recommend Patryk for any web development needs!"</p>
+                    <p>- Client 2</p>
+                </div>
+                <div class="review-card animate__animated animate__fadeInRight">
+                    <p>"Excellent communication and dedication to delivering top-notch websites. Highly recommended!"</p>
+                    <p>- Client 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Patryk. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
